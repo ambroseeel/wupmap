@@ -56,7 +56,7 @@
 
   <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
     <div class="container-fluid">
-        <a class="navbar-brand mb-0 h1" href="#">
+        <a class="navbar-brand mb-0 h1" href="/">
             <img src="{{ asset('images/wupnav.png') }}" alt="Logo" style="height: 40px;"> WU-P Cushman Campus
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -68,21 +68,24 @@
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingOne">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Campus Map
+                                <h5>Campus Map</h5>
                             </button>
                         </h2>
                         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <p>Explore Wesleyan University-Philippines Cushman Campus grounds!</p>
-                                <button type="button" class="btn btn-secondary" href="#">Google Map</button>
-                                <button type="button" class="btn btn-secondary">2D Map</button>
+                                <a href="{{ route('google_map_route_name') }}" class="btn btn-secondary">Google Map</a>
+                                <!--<a href="#" class="btn btn-secondary">Google Map</a>-->
+                                 
+                                <a href="#" class="btn btn-secondary">2D Map</a>
+                                 
                             </div>
                         </div>
                     </div>
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingTwo">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                About Us
+                                <h5>About Us</h5>
                             </button>
                         </h2>
                         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
@@ -91,39 +94,39 @@
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="nestedHeadingOne">
                                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#nestedCollapseOne" aria-expanded="true" aria-controls="nestedCollapseOne">
-                                                Mission
+                                                <b>Mission</b>
                                             </button>
                                         </h2>
                                         <div id="nestedCollapseOne" class="accordion-collapse collapse show" aria-labelledby="nestedHeadingOne" data-bs-parent="#nestedAccordion">
-                                            <div class="accordion-body">
+                                            <div class="accordion-body" style="max-height: 200px; overflow-y: auto;">
                                                 <p>Proclaiming and upholding Christian ideals and the democratic principles for which it stands, Wesleyan University-Philippines commits:
                                                     to promote transformative leadership evidenced through effective and transparent governance ruled by social holiness;
                                                     to produce proactive 21st-century learners honed by high-caliber and conscientious faculty and staff using state-of-the-art facilities, and guided by the principle of inclusive education;
                                                     to foster successful partnerships with stakeholders and sustainable linkages with the community; and
                                                     to be at the forefront of conducting innovative research as a testament to our shared responsibility in nation-building.
-                                                    </p>
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="nestedHeadingTwo">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#nestedCollapseTwo" aria-expanded="false" aria-controls="nestedCollapseTwo">
-                                                Vision
+                                                <b>Vision</b>
                                             </button>
                                         </h2>
                                         <div id="nestedCollapseTwo" class="accordion-collapse collapse" aria-labelledby="nestedHeadingTwo" data-bs-parent="#nestedAccordion">
-                                            <div class="accordion-body">
+                                            <div class="accordion-body" style="max-height: 200px; overflow-y: auto;">
                                                 <p>“By 2029, Wesleyan University-Philippines is the leading Filipino University imbued with Wesleyan spirituality; it is internationally recognized for providing high-quality education; and has a shared culture of social responsibility.”</p>
                                         </div>
                                     </div>
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="nestedHeadingThree">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#nestedCollapseThree" aria-expanded="false" aria-controls="nestedCollapseTwo">
-                                                Accreditation
+                                                <b>Accreditation</b>
                                             </button>
                                         </h2>
                                         <div id="nestedCollapseThree" class="accordion-collapse collapse" aria-labelledby="nestedHeadingThree" data-bs-parent="#nestedAccordion">
-                                            <div class="accordion-body">
+                                            <div class="accordion-body" style="max-height: 200px; overflow-y: auto;">
                                                 <p>It is one of only 68 higher education institutions in the Philippines granted autonomous status by the Commission on Higher Education. Only five private schools in Region III enjoy this status.
                                                     <br>
                                                     <br>

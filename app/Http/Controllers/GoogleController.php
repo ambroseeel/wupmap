@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class GoogleController extends Controller
 {
-    public function index()
+    public function googleMap()
     {
         return view('google-map');
     }
