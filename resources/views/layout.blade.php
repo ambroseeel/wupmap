@@ -95,8 +95,8 @@
         }
 
         .floating-button {
-            background-color: #F6F5B2; /* Button color */
-            color: rgb(43, 28, 28); /* Text color */
+            background-color: #006A3A; /* Button color */
+            color: #ffffff; /* Text color */
             border-radius: 50%; /* Make it circular */
             width: 60px; /* Width of the button */
             height: 60px; /* Height of the button */
@@ -330,7 +330,7 @@
             </div>
         </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script>
+  <!--  <script>
         document.addEventListener('DOMContentLoaded', function() {
             const floatingButton = document.querySelector('.floating-button');
             const elementContainer = document.querySelector('.element-container');
@@ -394,6 +394,79 @@
     }
 });
     </script>
+-->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const floatingButton = document.querySelector('.floating-button');
+    const elementContainer = document.querySelector('.element-container');
+    const collapsibleButton = document.querySelector('.collapsible-button');
+    const accordionContainer = document.querySelector('.accordion-container');
+    const sendEmailButton = document.getElementById('sendEmailButton');
+    const officeSelect = document.getElementById('office');
+    const messageInput = document.getElementById('message');
+    const accordionButtons = document.querySelectorAll('.accordion-button');
+
+    // Toggle visibility on floating button click
+    if (floatingButton && elementContainer) {
+        floatingButton.addEventListener('click', function() {
+            elementContainer.classList.toggle('active');
+        });
+    }
+
+    // Handle collapsible button click
+    if (collapsibleButton && accordionContainer) {
+        collapsibleButton.addEventListener('click', function() {
+            accordionContainer.style.display = accordionContainer.style.display === 'block' ? 'none' : 'block';
+        });
+    }
+
+    // Handle accordion button clicks
+    accordionButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const content = this.nextElementSibling;
+            const isActive = content.style.display === 'block';
+
+            // Close all accordion items
+            document.querySelectorAll('.accordion-content').forEach(item => {
+                item.style.display = 'none';
+            });
+
+            // Toggle the clicked item
+            content.style.display = isActive ? 'none' : 'block';
+        });
+    });
+
+    // Handle send email button click
+    if (sendEmailButton) {
+        sendEmailButton.addEventListener('click', function() {
+            const selectedEmail = officeSelect ? officeSelect.value : '';
+            const message = messageInput ? messageInput.value : '';
+
+            if (selectedEmail) {
+                const subject = encodeURIComponent('Message from Contact Form');
+                const body = encodeURIComponent(message);
+                const mailtoLink = `mailto:${selectedEmail}?subject=${subject}&body=${body}`;
+                window.location.href = mailtoLink; // Open the default email client
+            } else {
+                alert('Please select an office before sending the email.');
+            }
+        });
+    }
+
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        const dropdown = document.querySelector('.dropdown-menu');
+        if (dropdown) {
+            const viewportHeight = window.innerHeight;
+            const dropdownHeight = dropdown.getBoundingClientRect().height;
+            if (dropdownHeight > viewportHeight) {
+                dropdown.style.maxHeight = `${viewportHeight - 100}px`; // Adjust as needed
+                dropdown.style.overflowY = 'auto';
+            }
+        }
+    });
+});
+</script>
 </body>
 
 </html>
